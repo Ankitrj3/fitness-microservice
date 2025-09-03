@@ -4,7 +4,6 @@ import com.fitness.userservice.UserRepository;
 import com.fitness.userservice.dto.RegisterRequest;
 import com.fitness.userservice.dto.UserResponse;
 import com.fitness.userservice.models.User;
-import jdk.jshell.spi.ExecutionControl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
