@@ -7,7 +7,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name= "users")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -22,7 +22,7 @@ public class User {
     private String lastname;
 
     @Enumerated(EnumType.STRING)
-    private  UserRole role = UserRole.USER;
+    private UserRole role = UserRole.USER;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -31,7 +31,8 @@ public class User {
     private LocalDateTime updatedAt;
 
     // Constructors
-    public User() {}
+    public User() {
+    }
 
     public User(String email, String password, String firstname, String lastname) {
         this.email = email;

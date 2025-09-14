@@ -6,6 +6,7 @@ import com.fitness.activityservice.dto.ActivityResponse;
 import com.fitness.activityservice.service.ActivityService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,5 +21,10 @@ public class ActivityController {
     @PostMapping
     public ResponseEntity<ActivityResponse> trackActivity(@RequestBody ActivityRequest request){
         return ResponseEntity.ok(activityService.trackActivity(request));
+    }
+
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("ActivityService is healthy and running!");
     }
 }

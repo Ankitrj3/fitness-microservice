@@ -12,9 +12,11 @@ public class UserResponse {
     private LocalDateTime updatedAt;
 
     // Constructors
-    public UserResponse() {}
+    public UserResponse() {
+    }
 
-    public UserResponse(String id, String email, String password, String firstname, String lastname, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public UserResponse(String id, String email, String password, String firstname, String lastname,
+            LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.email = email;
         this.password = password;

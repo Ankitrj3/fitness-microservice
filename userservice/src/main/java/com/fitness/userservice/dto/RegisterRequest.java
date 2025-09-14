@@ -10,13 +10,14 @@ public class RegisterRequest {
     private String email;
 
     @NotBlank(message = "Password is required")
-    @Size(min=6 , message = "Password must have atleast 6 characters")
+    @Size(min = 6, message = "Password must have atleast 6 characters")
     private String password;
     private String firstName;
     private String lastName;
 
     // Constructors
-    public RegisterRequest() {}
+    public RegisterRequest() {
+    }
 
     public RegisterRequest(String email, String password, String firstName, String lastName) {
         this.email = email;

@@ -14,8 +14,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public UserResponse register(RegisterRequest request){
-        if(userRepository.existsByEmail(request.getEmail())){
+    public UserResponse register(RegisterRequest request) {
+        if (userRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already exists");
         }
 
@@ -41,7 +41,7 @@ public class UserService {
 
     public UserResponse getUserProfile(String userId) {
         User user = userRepository.findById(userId)
-                .orElseThrow(()-> new RuntimeException("User not found"));
+                .orElseThrow(() -> new RuntimeException("User not found"));
         UserResponse userResponse = new UserResponse();
         userResponse.setId(user.getId());
         userResponse.setEmail(user.getEmail());
