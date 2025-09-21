@@ -1,6 +1,5 @@
 package com.fitness.activityservice.controller;
 
-
 import com.fitness.activityservice.dto.ActivityRequest;
 import com.fitness.activityservice.dto.ActivityResponse;
 import com.fitness.activityservice.service.ActivityService;
@@ -19,7 +18,7 @@ public class ActivityController {
     private ActivityService activityService;
 
     @PostMapping
-    public ResponseEntity<ActivityResponse> trackActivity(@RequestBody ActivityRequest request){
+    public ResponseEntity<ActivityResponse> trackActivity(@RequestBody ActivityRequest request) {
         return ResponseEntity.ok(activityService.trackActivity(request));
     }
 

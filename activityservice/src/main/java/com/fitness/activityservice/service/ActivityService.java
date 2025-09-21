@@ -13,8 +13,14 @@ public class ActivityService {
 
     // final ensures Lombok generates constructor
     private final ActivityRepository activityRepository;
+    private final UserValidationService userValidationService;
 
     public ActivityResponse trackActivity(ActivityRequest activityRequest) {
+        boolean isValidUser = userValidationService.validateUser(activityRequest.getUserId());
+
+        if(!isValidUser){
+            throw new RuntimeException("Invalid user id" +  activityRequest.getUserId())  ;
+        }
         Activity activity = Activity.builder()
                 .userId(activityRequest.getUserId())
                 .type(activityRequest.getType())

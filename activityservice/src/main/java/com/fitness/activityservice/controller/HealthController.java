@@ -21,7 +21,7 @@ public class HealthController {
         healthInfo.put("timestamp", LocalDateTime.now());
         healthInfo.put("database", "MongoDB");
         healthInfo.put("version", "1.0.0");
-        
+
         return ResponseEntity.ok(healthInfo);
     }
 
