@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class  RecommendationService {
+public class RecommendationService {
 
     private final RecommendationRepository recommendationRepository;
 
@@ -20,5 +20,9 @@ public class  RecommendationService {
     public Recommendation getActivityRecommendation(String activityId) {
         return recommendationRepository.findByActivityId(activityId)
                 .orElseThrow(() -> new RuntimeException("Activity not found: " + activityId));
+    }
+
+    public Recommendation saveRecommendation(Recommendation recommendation) {
+        return recommendationRepository.save(recommendation);
     }
 }
