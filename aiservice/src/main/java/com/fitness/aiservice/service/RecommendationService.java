@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class RecommendationService {
+public class  RecommendationService {
 
     private final RecommendationRepository recommendationRepository;
 
