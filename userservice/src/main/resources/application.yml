@@ -1,4 +1,4 @@
-spring.application.name=userservice
+spring.application.name=user-service
 server.port=8081
 spring.datasource.url=jdbc:postgresql://localhost:5432/fitness-micro-user
 spring.datasource.username=postgres
