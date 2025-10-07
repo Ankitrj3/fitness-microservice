@@ -28,6 +28,17 @@
             "mainClass": "com.fitness.activityservice.ActivityserviceApplication",
             "projectName": "activityservice",
             "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ConfigserverApplication<configserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.fitnessmicroservice.configserver.ConfigserverApplication",
+            "projectName": "configserver",
+            "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
     ]

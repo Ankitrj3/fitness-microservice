@@ -1,19 +1,5 @@
-spring.application.name=user-service
-server.port=8081
-spring.datasource.url=jdbc:postgresql://localhost:5432/fitness-micro-user
-spring.datasource.username=postgres
-spring.datasource.password=15aGG15@
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
-
-# Eureka Client Configuration
-eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
-eureka.client.register-with-eureka=true
-eureka.client.fetch-registry=true
-eureka.instance.hostname=localhost
-eureka.instance.prefer-ip-address=true
-
-# Actuator Configuration
-management.endpoints.web.exposure.include=health,info,metrics
-management.endpoint.health.show-details=always
-management.info.env.enabled=true
+spring:
+  application:
+    name: user-service
+  config:
+    import: "optional:configserver:http://localhost:8888"
