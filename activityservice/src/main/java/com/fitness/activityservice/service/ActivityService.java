@@ -24,10 +24,10 @@ public class ActivityService {
 
     public ActivityResponse trackActivity(ActivityRequest activityRequest) {
         log.info("Tracking activity for user: {}", activityRequest.getUserId());
-        
+
         try {
             boolean isValidUser = userValidationService.validateUser(activityRequest.getUserId());
-            
+
             log.info("User validation result for {}: {}", activityRequest.getUserId(), isValidUser);
 
             if (!isValidUser) {
@@ -48,7 +48,7 @@ public class ActivityService {
             log.info("Saving activity to database");
             Activity savedActivity = activityRepository.save(activity);
             log.info("Activity saved with id: {}", savedActivity.getId());
-            
+
             try {
                 log.info("Sending activity to Kafka topic: {}", topicName);
                 kafkaTemplate.send(topicName, savedActivity.getUserId(), savedActivity);
@@ -57,7 +57,7 @@ public class ActivityService {
                 log.error("Failed to send activity to Kafka: {}", e.getMessage(), e);
                 // Don't fail the request if Kafka fails
             }
-            
+
             return mapToResponse(savedActivity);
         } catch (Exception e) {
             log.error("Failed to track activity: {}", e.getMessage(), e);

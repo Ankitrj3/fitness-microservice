@@ -6,19 +6,21 @@ eureka:
 spring:
   cloud:
     gateway:
-      routes:
-        - id: user-service
-          uri: lb://USER_SERVICE
-          predicates:
-            - Path=/api/users/**
-        - id: activity-service
-          uri: lb://ACTIVITY_SERVICE
-          predicates:
-            - Path=/api/activities/**
-        - id: ai-service
-          uri: lb://AI_SERVICE
-          predicates:
-            - Path=/api/recommendations/**
+      server:
+        webflux:
+          routes:
+            - id: user-service
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/users/**
+            - id: activity-service
+              uri: lb://ACTIVITY-SERVICE
+              predicates:
+                - Path=/api/activities/**
+            - id: ai-service
+              uri: lb://AI-SERVICE
+              predicates:
+                - Path=/api/recommendations/**
 
 server:
   port: 8080
