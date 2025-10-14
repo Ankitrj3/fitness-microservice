@@ -29,7 +29,7 @@ public class SecurityConfig {
                         // Require authentication for all other requests
                         .anyExchange().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2
-                    .jwt(jwt -> jwt.jwtDecoder(jwtDecoder())))
+                        .jwt(jwt -> jwt.jwtDecoder(jwtDecoder())))
                 .build();
     }
 }
