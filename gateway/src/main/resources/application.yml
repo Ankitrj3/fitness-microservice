@@ -24,7 +24,7 @@ spring:
                 - Path=/api/recommendations/**
 
 server:
-  port: 8080
+  port: 8085
 
 eureka:
   client:
